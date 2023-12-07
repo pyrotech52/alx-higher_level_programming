@@ -12,4 +12,4 @@ def weight_average(my_list=[]):
     if total_weight == 0:
         return 0
 
-    return total_score / total_weight
+    return float(total_score / total_weight)
