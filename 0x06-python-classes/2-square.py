@@ -6,7 +6,7 @@ class Square:
     """A class representing a square.
 
     Attributes:
-    - __size (int): Private instance attribute representing the size of the square."""
+    - __size (int): Private instance that represents d size of d sqr"""
 
     def __init__(self, size=0):
         """Initializes a Square instance with an optional size.
@@ -19,4 +19,3 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
-
