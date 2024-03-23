@@ -1,15 +1,19 @@
 #!/usr/bin/python3
-
-from sqlalchemy import Column, Integer, String, ForeignKey
+"""
+Contains State class and Base
+"""
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
-from model_state import Base, State
 
-Base = declarative_base()
+mymetadata = MetaData()
+Base = declarative_base(metadata=mymetadata)
 
 
-class City(Base):
-    __tablename__ = 'cities'
-    id = Column(Integer, nullable=False, primary_key=True, unique=True,
-                autoincrement=True)
+class State(Base):
+    """
+    Class with id and name attributes
+    """
+    __tablename__ = 'states'
+    id = Column(Integer, unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+
